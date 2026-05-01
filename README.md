@@ -9,22 +9,16 @@ Pandoc filter that renders [Excalidraw](https://excalidraw.com) diagrams to SVG 
 
 ## Install
 
-For a document repo, install the filter locally as a dev dependency:
-
-```sh
-npm install --save-dev pandoc-excalidraw
-```
-
-You can also install directly from GitHub:
+Install directly from GitHub as a local dev dependency:
 
 ```sh
 npm install --save-dev github:tfurf/pandoc-excalidraw
 ```
 
-Global install is optional for one-off local use:
+Global install from GitHub:
 
 ```sh
-npm install -g pandoc-excalidraw
+npm install -g github:tfurf/pandoc-excalidraw
 ```
 
 ## Usage
@@ -49,7 +43,7 @@ Example `package.json` for a document repo:
 ```json
 {
 	"devDependencies": {
-		"pandoc-excalidraw": "^0.1.0"
+		"pandoc-excalidraw": "github:tfurf/pandoc-excalidraw"
 	},
 	"scripts": {
 		"build:html": "pandoc --filter ./node_modules/.bin/pandoc-excalidraw input.md -o output.html",

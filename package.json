@@ -13,7 +13,7 @@
   },
   "main": "./dist/filter.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx --yes -p typescript@5 tsc",
     "test": "jest",
     "prepare": "npm run build"
   },
