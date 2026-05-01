@@ -88,6 +88,10 @@ npm test        # run tests
 npm run build   # compile TypeScript to dist/
 ```
 
+## TODO
+
+- Add a GitHub Actions release workflow that runs tests, builds, creates `npm pack` tarball, and uploads it to GitHub Releases for install via release URL.
+
 ## License
 
 MIT.
