@@ -9,16 +9,16 @@ Pandoc filter that renders [Excalidraw](https://excalidraw.com) diagrams to SVG 
 
 ## Install
 
-Install directly from GitHub as a local dev dependency:
+Install as a local dev dependency from a GitHub release:
 
 ```sh
-npm install --save-dev github:tfurf/pandoc-excalidraw
+npm install --save-dev https://github.com/tfurf/pandoc-excalidraw/releases/latest/download/pandoc-excalidraw-0.1.0.tgz
 ```
 
-Global install from GitHub:
+Global install from a GitHub release:
 
 ```sh
-npm install -g github:tfurf/pandoc-excalidraw
+npm install -g https://github.com/tfurf/pandoc-excalidraw/releases/latest/download/pandoc-excalidraw-0.1.0.tgz
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ Example `package.json` for a document repo:
 ```json
 {
 	"devDependencies": {
-		"pandoc-excalidraw": "github:tfurf/pandoc-excalidraw"
+		"pandoc-excalidraw": "https://github.com/tfurf/pandoc-excalidraw/releases/latest/download/pandoc-excalidraw-0.1.0.tgz"
 	},
 	"scripts": {
 		"build:html": "pandoc --filter ./node_modules/.bin/pandoc-excalidraw input.md -o output.html",
@@ -88,9 +88,14 @@ npm test        # run tests
 npm run build   # compile TypeScript to dist/
 ```
 
-## TODO
+To publish a new release, bump the version and push the tag:
 
-- Add a GitHub Actions release workflow that runs tests, builds, creates `npm pack` tarball, and uploads it to GitHub Releases for install via release URL.
+```sh
+npm version patch   # or minor, major
+git push origin main --follow-tags
+```
+
+`npm version` updates `package.json` and creates a signed git tag. GitHub Actions will then run the tests, build, pack, and attach the tarball to a GitHub Release.
 
 ## License
 
